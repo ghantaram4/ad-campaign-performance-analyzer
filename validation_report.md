@@ -84,7 +84,9 @@ The current heuristic secret scan scanned 34 text files and found no matching se
 | Search C001 | One campaign and 504 estimated conversions |
 | Sample CSV upload | Accepted; 60 uploaded campaigns |
 | Campaign export data | Valid CSV data URL; expected 16-column header, 60 rows and original campaign IDs |
-| Browser warnings/errors | None in the inspected browser logs |
+| App warnings/errors | None observed; browser-extension metadata errors appeared in the final browser logs |
+
+The final log check showed errors from a browser-extension content script sending metadata, rather than from the dashboard's domain.
 
 Automatic capture of the CSV download timed out; receipt of a saved file was not verified on the live host. The export link is present and both enclosing iframes allow downloads. XLSX upload, invalid/oversized-file rejection, mobile width, separate-session isolation and all export variants passed in the local review and were not repeated on the live host. No anonymous/incognito session or live load test was run.
 
