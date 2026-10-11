@@ -4,6 +4,8 @@ A dashboard for exploring how advertising campaigns perform across Facebook, Ins
 
 The app opens with a 60-campaign sample dataset. You can also upload your own CSV or Excel file.
 
+[Try the live dashboard](https://ad-campaign-performance-analyzer.streamlit.app/)
+
 ![Dashboard overview](screenshots/01-overview.png)
 
 ## What you can do
@@ -73,6 +75,6 @@ Each row represents a whole campaign. Time charts group campaign results by thei
 
 Install `requirements-dev.txt` using the virtual-environment Python above, then run `-m pytest -q`. The test suite covers the analytics, uploads, filters and dashboard interactions. Results are recorded in [validation_report.md](validation_report.md).
 
-For Streamlit Community Cloud, use branch `main`, entrypoint `app.py` and Python 3.12. No app secrets are required. See [DEPLOYMENT.md](DEPLOYMENT.md) for the setup and live checks. Deployment is pending.
+For Streamlit Community Cloud, use branch `main`, entrypoint `app.py` and Python 3.12. No app secrets are required. See [DEPLOYMENT.md](DEPLOYMENT.md) for the setup and live checks. The dashboard is deployed on Streamlit Community Cloud.
 
 The project uses Streamlit, pandas, Plotly and openpyxl. Its sample data and metric conventions come from the supplied Ad Campaign Performance Analyzer solution kit and dataset.

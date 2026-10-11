@@ -54,7 +54,7 @@ The kit's hardcoded date range, missing ROI unit, clipped funnel labels and zero
 
 ## Remaining submission work
 
-Run on the user's laptop, push source to a remote repository, deploy to a suitable Streamlit host, and add real source/deployment links to the submission checklist. The exact course-wide Week 1 rubric was not supplied, so confirm additional submission requirements against that rubric. Browser checks subsequently verified CSV and Excel uploads, changed date bounds, malformed-file errors, campaign downloads and all four rendered views.
+The source repository and public Streamlit deployment are complete, and their URLs are in the submission checklist. Running the reviewed version on the user's laptop remains a separate step. The exact course-wide Week 1 rubric was not supplied, so confirm additional submission requirements against that rubric. Browser checks subsequently verified CSV and Excel uploads, changed date bounds, malformed-file errors, campaign downloads and all four rendered views.
 
 ## October 11, 2026 — chart refinement
 
@@ -72,3 +72,8 @@ The user uploaded the updated clean ZIP and selected a public sample-data demo o
 ## GitHub publication — October 11, 2026
 
 Published the reviewed application, sample dataset, tests, configuration and validation reports to https://github.com/ghantaram4/ad-campaign-performance-analyzer. The five current sample screenshots are included. Older validation images are retained in the reviewed ZIP and excluded from the public repository. Streamlit Cloud deployment and live verification remain pending.
+
+
+## Streamlit deployment — October 11, 2026
+
+Deployed `main` → `app.py` on Streamlit Community Cloud with Python 3.12: https://ad-campaign-performance-analyzer.streamlit.app/. Public sharing is enabled. Checked all four views, expected overview totals, Facebook filtering, empty state/reset, monthly grouping, C001 search and sample CSV upload. The campaign CSV export contains the expected headers, 60 rows and original IDs. Automatic saved-file capture timed out in the review browser; this is recorded as an unverified hosted check, not a passing download test. Earlier local upload/export/mobile/session checks remain documented separately.

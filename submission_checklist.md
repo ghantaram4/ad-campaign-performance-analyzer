@@ -19,19 +19,21 @@
 - [x] Run the uploaded/updated app in isolated Linux/Python 3.12.
 - [ ] Use this reviewed version for further laptop development.
 - [x] Create/push the source repository with the project files.
-- [ ] Deploy app.py using Python 3.12 and requirements.txt, which includes the audited lock.
-- [ ] Verify the deployed app's default metrics, filters, empty state, uploads and exports.
+- [x] Deploy app.py using Python 3.12 and requirements.txt, which includes the audited lock.
+- [x] Verify hosted default metrics, four views, filters, empty state/reset, C001 search, monthly grouping and sample CSV upload.
+- [x] Inspect the live campaign CSV export's headers, row count and IDs.
+- [ ] Confirm saved-file downloads and the remaining XLSX/mobile/session checks in a regular browser; automatic download capture timed out.
 - [ ] Check every screenshot and replace any that need to reflect the deployed version.
-- [ ] Add the real repository URL and deployment URL below.
+- [x] Add the real repository URL and deployment URL below.
 - [ ] Confirm additional Week 1 deliverables against your course rubric.
 
 Repository URL: https://github.com/ghantaram4/ad-campaign-performance-analyzer
 
-Dashboard URL: ____________________
+Dashboard URL: https://ad-campaign-performance-analyzer.streamlit.app/
 
 ## Selected deployment route
 
-Public demo on Streamlit Community Cloud. DEPLOYMENT.md provides the exact GitHub upload, Python 3.12, app.py entrypoint, sharing and live-check steps. No secrets are needed. Cloud provides HTTPS and compute quotas; the application bounds inputs and chart expansion. Live deployment is pending.
+Public demo on Streamlit Community Cloud. DEPLOYMENT.md provides the exact GitHub upload, Python 3.12, app.py entrypoint, sharing and live-check steps. No secrets are needed. Cloud provides HTTPS and compute quotas; the application bounds inputs and chart expansion. The public app is deployed. Hosted validation scope and remaining checks are recorded in validation_report.md.
 
 ## Suggested demonstration
 

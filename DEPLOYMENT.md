@@ -1,8 +1,10 @@
 # Deploy the public demo on Streamlit Community Cloud
 
-Selected October 11, 2026: public viewing, sample/non-confidential campaign data, Streamlit Community Cloud. No API key, database or login feature is needed for this demo. Python 3.12/Linux was verified locally; the live deployment is still pending.
+Selected October 11, 2026: public viewing, sample/non-confidential campaign data, Streamlit Community Cloud. No API key, database or login feature is needed for this demo. Python 3.12/Linux was verified locally; the public Cloud app is now deployed.
 
 Source repository: https://github.com/ghantaram4/ad-campaign-performance-analyzer
+
+Live dashboard: https://ad-campaign-performance-analyzer.streamlit.app/
 
 ## Upload the extracted project to GitHub
 
@@ -24,7 +26,7 @@ VS Code Source Control can initialize, commit and publish the extracted folder t
 ## Create the Cloud app
 
 1. Sign in at https://share.streamlit.io/ and connect the GitHub account owning the repository.
-2. Click **Create app**, then **Yup, I have an app** if prompted.
+2. Click **Create app**, then **Deploy from repo**.
 3. Choose the repository, branch `main`, and main file path `app.py`.
 4. In **Advanced settings**, select **Python 3.12**.
 5. Leave Secrets empty. Save and deploy.
@@ -57,7 +59,7 @@ In an incognito browser, check:
 - All three explicit exports and native table CSV downloads.
 - Mobile layout and Cloud build/runtime logs without errors.
 
-Record the repository and live dashboard URLs in `submission_checklist.md`. These live checks have not been marked complete.
+The URLs are recorded in `submission_checklist.md`. Hosted checks completed October 11, 2026 include public sharing, four tabs, expected totals, Facebook filtering, empty state/reset, C001 search, monthly grouping and a sample CSV upload. The campaign export's data URL contains the expected CSV, but automatic download capture timed out in the review browser. XLSX uploads, separate-session isolation, oversized/invalid files and mobile layout passed locally and were not repeated on the live host. See `validation_report.md` for the exact scope.
 
 ## Safeguards included
 

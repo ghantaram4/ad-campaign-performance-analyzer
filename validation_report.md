@@ -67,8 +67,27 @@ The current heuristic secret scan scanned 34 text files and found no matching se
 
 ## Deployment status
 
-**Verified locally and published to GitHub; the live Cloud deployment is pending.** Source repository: https://github.com/ghantaram4/ad-campaign-performance-analyzer. Cloud provides HTTPS and managed quotas. Public viewing and sample/non-confidential uploads are intentional. No confidential-data access policy is claimed.
+**Deployed on Streamlit Community Cloud on October 11, 2026.**
 
-GitHub sign-in and repository publication are complete. Cloud app creation and the actual live smoke checks in DEPLOYMENT.md remain. No custom global rate limiter, concurrent-session gate or load-test capacity guarantee is claimed.
+- Source: https://github.com/ghantaram4/ad-campaign-performance-analyzer
+- Dashboard: https://ad-campaign-performance-analyzer.streamlit.app/
+- Deployment settings: branch `main`, entrypoint `app.py`, Python 3.12, no application secrets.
+- The app's sharing panel shows **Make this app public** enabled.
+
+| Hosted check | Result |
+| --- | --- |
+| Four tabs and charts | Rendered successfully |
+| Default overview | 60 campaigns; $29,490 spend; 304,450 clicks; 61,361 estimated conversions; 5.59% CTR; 3.86% reported ROI |
+| Facebook filter | 15 campaigns and $8,570 spend |
+| Empty channel selection and Reset | No-data message, then all 60 campaigns restored |
+| Time grouping | Monthly selection updated the chart |
+| Search C001 | One campaign and 504 estimated conversions |
+| Sample CSV upload | Accepted; 60 uploaded campaigns |
+| Campaign export data | Valid CSV data URL; expected 16-column header, 60 rows and original campaign IDs |
+| Browser warnings/errors | None in the inspected browser logs |
+
+Automatic capture of the CSV download timed out; receipt of a saved file was not verified on the live host. The export link is present and both enclosing iframes allow downloads. XLSX upload, invalid/oversized-file rejection, mobile width, separate-session isolation and all export variants passed in the local review and were not repeated on the live host. No anonymous/incognito session or live load test was run.
+
+Public viewing and sample/non-confidential uploads are intentional. No confidential-data access policy, custom global rate limiter, concurrent-session gate or load-test capacity guarantee is claimed.
 
 Earlier Windows Codex evidence remains under `validation/security-*`, `validation/ink-coral-*`, `validation/dependency-audit.json` and `validation/secret-scan.json`. Those describe the earlier local review. Historical validation PNGs remain in the reviewed ZIP; the public repository includes the five current sample screenshots.
