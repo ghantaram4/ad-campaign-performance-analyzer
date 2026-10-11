@@ -1,0 +1,27 @@
+[server]
+headless = true
+maxUploadSize = 10
+maxMessageSize = 32
+enableCORS = true
+enableXsrfProtection = true
+enableStaticServing = false
+
+[client]
+showErrorDetails = "none"
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#e76f61"
+backgroundColor = "#f7f3ed"
+secondaryBackgroundColor = "#eee8e0"
+textColor = "#202b33"
+font = "sans serif"
+
+[theme.sidebar]
+backgroundColor = "#202b33"
+secondaryBackgroundColor = "#33414b"
+textColor = "#f7f3ed"
+primaryColor = "#e76f61"

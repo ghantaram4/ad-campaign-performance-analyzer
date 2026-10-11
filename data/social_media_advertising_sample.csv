@@ -1,0 +1,61 @@
+Campaign_ID,Target_Audience,Campaign_Goal,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date,Company
+C001,18-25,Brand Awareness,15 Days,Facebook,0.12,420,3.2,New York,English,4200,85000,72,Health & Wellness,2024-01-05,AlphaMedia
+C002,26-35,Lead Generation,30 Days,Instagram,0.18,680,4.1,Los Angeles,English,6800,120000,81,Technology,2024-01-08,BetaBrands
+C003,36-45,Sales,20 Days,Twitter,0.09,310,2.4,Chicago,English,2900,64000,58,Finance,2024-01-12,GammaGrowth
+C004,18-25,App Installs,10 Days,Pinterest,0.21,540,5.0,Miami,English,5400,95000,88,Beauty & Fashion,2024-01-15,DeltaDrive
+C005,46-55,Brand Awareness,25 Days,Facebook,0.07,290,1.9,Houston,English,1800,52000,45,Retirement,2024-01-18,EpsilonEdge
+C006,26-35,Sales,14 Days,Instagram,0.25,780,6.2,Seattle,English,9200,140000,91,Technology,2024-01-22,AlphaMedia
+C007,18-25,Lead Generation,21 Days,Twitter,0.14,360,3.5,Boston,English,3600,72000,64,Education,2024-01-25,ZetaZone
+C008,36-45,Brand Awareness,30 Days,Pinterest,0.08,250,2.1,Denver,English,2200,58000,52,Home & Garden,2024-01-28,BetaBrands
+C009,26-35,App Installs,7 Days,Facebook,0.31,920,7.4,San Francisco,English,11000,160000,95,Technology,2024-02-01,GammaGrowth
+C010,18-25,Sales,18 Days,Instagram,0.16,490,4.0,Phoenix,English,5200,98000,77,Health & Wellness,2024-02-04,DeltaDrive
+C011,46-55,Lead Generation,28 Days,Twitter,0.06,220,1.5,Philadelphia,English,1400,42000,38,Finance,2024-02-07,EpsilonEdge
+C012,36-45,App Installs,12 Days,Pinterest,0.19,610,4.8,Atlanta,English,7100,115000,83,Beauty & Fashion,2024-02-11,AlphaMedia
+C013,26-35,Brand Awareness,22 Days,Facebook,0.11,380,2.9,Dallas,English,3100,68000,61,Technology,2024-02-14,ZetaZone
+C014,18-25,Sales,16 Days,Instagram,0.28,840,6.8,San Diego,English,10200,155000,93,Health & Wellness,2024-02-18,BetaBrands
+C015,36-45,Lead Generation,25 Days,Twitter,0.1,340,2.6,Portland,English,2500,55000,55,Education,2024-02-21,GammaGrowth
+C016,46-55,Brand Awareness,30 Days,Pinterest,0.05,180,1.2,Las Vegas,English,1100,38000,32,Retirement,2024-02-25,DeltaDrive
+C017,26-35,App Installs,9 Days,Facebook,0.27,760,6.0,Austin,English,8800,132000,89,Technology,2024-02-28,EpsilonEdge
+C018,18-25,Sales,14 Days,Instagram,0.22,660,5.5,Nashville,English,7400,118000,84,Beauty & Fashion,2024-03-03,AlphaMedia
+C019,36-45,Brand Awareness,20 Days,Twitter,0.08,270,2.0,Jacksonville,English,1900,50000,47,Home & Garden,2024-03-07,ZetaZone
+C020,26-35,Lead Generation,30 Days,Pinterest,0.17,520,4.3,Columbus,English,5900,105000,78,Finance,2024-03-10,BetaBrands
+C021,18-25,App Installs,11 Days,Facebook,0.24,720,5.8,Charlotte,English,8400,128000,87,Technology,2024-03-14,GammaGrowth
+C022,46-55,Sales,18 Days,Instagram,0.07,240,1.7,Indianapolis,English,1500,44000,40,Finance,2024-03-17,DeltaDrive
+C023,26-35,Brand Awareness,26 Days,Twitter,0.12,400,3.1,San Jose,English,3300,70000,63,Health & Wellness,2024-03-21,EpsilonEdge
+C024,36-45,Lead Generation,15 Days,Pinterest,0.15,460,3.8,Fort Worth,English,4600,88000,70,Education,2024-03-24,AlphaMedia
+C025,18-25,Sales,22 Days,Facebook,0.29,870,7.0,Memphis,English,10500,158000,94,Technology,2024-03-28,ZetaZone
+C026,26-35,App Installs,8 Days,Instagram,0.23,690,5.6,Baltimore,English,7800,122000,85,Beauty & Fashion,2024-04-01,BetaBrands
+C027,46-55,Brand Awareness,30 Days,Twitter,0.04,160,1.0,Louisville,English,900,32000,28,Retirement,2024-04-04,GammaGrowth
+C028,36-45,Sales,17 Days,Pinterest,0.13,430,3.3,Milwaukee,English,3700,76000,66,Home & Garden,2024-04-08,DeltaDrive
+C029,18-25,Lead Generation,24 Days,Facebook,0.2,600,4.6,Albuquerque,English,6500,110000,80,Health & Wellness,2024-04-11,EpsilonEdge
+C030,26-35,Brand Awareness,20 Days,Instagram,0.15,470,3.6,Tucson,English,4800,92000,73,Technology,2024-04-15,AlphaMedia
+C031,46-55,App Installs,13 Days,Twitter,0.06,210,1.4,Fresno,English,1300,40000,36,Finance,2024-04-18,ZetaZone
+C032,18-25,Sales,19 Days,Pinterest,0.26,800,6.5,Sacramento,English,9500,148000,92,Beauty & Fashion,2024-04-22,BetaBrands
+C033,36-45,Lead Generation,28 Days,Facebook,0.11,370,2.7,Mesa,English,2700,60000,57,Education,2024-04-25,GammaGrowth
+C034,26-35,Brand Awareness,22 Days,Instagram,0.18,550,4.2,Kansas City,English,6000,108000,79,Health & Wellness,2024-04-29,DeltaDrive
+C035,18-25,App Installs,10 Days,Twitter,0.2,620,5.1,Omaha,English,7200,116000,82,Technology,2024-05-02,EpsilonEdge
+C036,46-55,Sales,25 Days,Pinterest,0.05,190,1.3,Raleigh,English,1200,39000,33,Retirement,2024-05-06,AlphaMedia
+C037,26-35,Lead Generation,16 Days,Facebook,0.22,670,5.3,Colorado Springs,English,7500,120000,86,Finance,2024-05-09,ZetaZone
+C038,36-45,Brand Awareness,30 Days,Instagram,0.09,300,2.2,Long Beach,English,2100,56000,50,Home & Garden,2024-05-13,BetaBrands
+C039,18-25,Sales,14 Days,Twitter,0.24,730,5.9,Virginia Beach,English,8700,134000,90,Health & Wellness,2024-05-16,GammaGrowth
+C040,26-35,App Installs,9 Days,Pinterest,0.19,580,4.7,Minneapolis,English,6300,106000,78,Technology,2024-05-20,DeltaDrive
+C041,46-55,Brand Awareness,28 Days,Facebook,0.06,200,1.6,Tampa,English,1600,46000,41,Retirement,2024-05-23,EpsilonEdge
+C042,36-45,Lead Generation,21 Days,Instagram,0.14,440,3.4,New Orleans,English,4100,82000,68,Education,2024-05-27,AlphaMedia
+C043,18-25,Sales,16 Days,Twitter,0.27,810,6.6,Arlington,English,9800,150000,93,Beauty & Fashion,2024-05-30,ZetaZone
+C044,26-35,Brand Awareness,25 Days,Pinterest,0.13,410,3.0,Wichita,English,3200,67000,62,Technology,2024-06-03,BetaBrands
+C045,36-45,App Installs,12 Days,Facebook,0.21,640,5.2,Bakersfield,English,7600,124000,86,Health & Wellness,2024-06-06,GammaGrowth
+C046,18-25,Lead Generation,20 Days,Instagram,0.16,500,4.1,Aurora,English,5500,100000,76,Education,2024-06-10,DeltaDrive
+C047,46-55,Sales,30 Days,Twitter,0.04,170,1.1,Anaheim,English,1000,35000,30,Retirement,2024-06-13,EpsilonEdge
+C048,26-35,Brand Awareness,18 Days,Pinterest,0.17,530,4.4,Santa Ana,English,6100,110000,80,Finance,2024-06-17,AlphaMedia
+C049,36-45,Sales,22 Days,Facebook,0.12,390,2.8,Corpus Christi,English,2800,62000,59,Home & Garden,2024-06-20,ZetaZone
+C050,18-25,App Installs,8 Days,Instagram,0.3,900,7.2,Riverside,English,10800,162000,96,Technology,2024-06-24,BetaBrands
+C051,26-35,Lead Generation,26 Days,Twitter,0.11,350,2.5,Lexington,English,2400,53000,53,Health & Wellness,2024-06-27,GammaGrowth
+C052,46-55,Brand Awareness,30 Days,Pinterest,0.05,185,1.2,Stockton,English,1050,37000,31,Retirement,2024-07-01,DeltaDrive
+C053,36-45,Sales,15 Days,Facebook,0.16,490,3.9,Pittsburgh,English,5100,96000,75,Education,2024-07-04,EpsilonEdge
+C054,18-25,App Installs,11 Days,Instagram,0.25,750,6.1,Anchorage,English,8900,136000,90,Technology,2024-07-08,AlphaMedia
+C055,26-35,Brand Awareness,24 Days,Twitter,0.1,320,2.3,Greensboro,English,2000,48000,48,Finance,2024-07-11,ZetaZone
+C056,36-45,Lead Generation,19 Days,Pinterest,0.18,560,4.5,Plano,English,6400,112000,81,Health & Wellness,2024-07-15,BetaBrands
+C057,18-25,Sales,17 Days,Facebook,0.28,850,6.9,Lincoln,English,10100,154000,94,Beauty & Fashion,2024-07-18,GammaGrowth
+C058,46-55,App Installs,14 Days,Instagram,0.07,230,1.6,Orlando,English,1700,47000,42,Retirement,2024-07-22,DeltaDrive
+C059,26-35,Brand Awareness,22 Days,Twitter,0.13,420,3.2,Chandler,English,3400,71000,64,Technology,2024-07-25,EpsilonEdge
+C060,36-45,Sales,20 Days,Pinterest,0.15,465,3.7,Laredo,English,4700,89000,71,Home & Garden,2024-07-29,AlphaMedia

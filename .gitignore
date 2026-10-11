@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.streamlit/secrets.toml
+*.log
+.browser-tools/
+
+.env
+.env.*
+*.pem
+*.key
+*.p12

@@ -1,0 +1,20 @@
+{
+  "health": "ok",
+  "four_views": true,
+  "empty_filters_all_views": true,
+  "reset": true,
+  "csv_upload_and_separate_tab_sessions": true,
+  "upload_date_reset": true,
+  "platform_comparison_export": true,
+  "campaign_details_export": true,
+  "time_series_export": true,
+  "chart_markup_inert": true,
+  "native_export_protected": true,
+  "local_search_empty": true,
+  "xlsx_upload": true,
+  "invalid_schema_safe": true,
+  "upload_size_limit": true,
+  "mobile_no_page_overflow": true,
+  "no_shared_media_export_requests": true,
+  "browser_errors": []
+}

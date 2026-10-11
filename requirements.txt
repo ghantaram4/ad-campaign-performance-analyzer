@@ -1,0 +1,2 @@
+# Community Cloud detects this file; install the audited transitive runtime.
+-r requirements.lock.txt

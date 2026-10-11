@@ -1,0 +1,9 @@
+{
+  "health": "ok",
+  "campaign_export": true,
+  "new_source_date_bounds": true,
+  "invalid_upload_error": true,
+  "excel_upload": true,
+  "browser_errors": [],
+  "screenshots": 4
+}

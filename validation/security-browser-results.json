@@ -1,0 +1,19 @@
+{
+  "four_tabs": true,
+  "global_empty_states": true,
+  "filter_reset": true,
+  "csv_upload_and_session_isolation": true,
+  "uploaded_html_inert": true,
+  "source_filter_reset": true,
+  "platform_comparison_download": true,
+  "campaign_details_download": true,
+  "time_series_download": true,
+  "native_table_export_formula_protection": true,
+  "local_search_empty_state": true,
+  "xlsx_upload": true,
+  "invalid_schema_without_content_disclosure": true,
+  "browser_upload_size_limit": true,
+  "mobile_no_page_overflow": true,
+  "no_shared_media_export_requests": true,
+  "no_browser_errors": true
+}
