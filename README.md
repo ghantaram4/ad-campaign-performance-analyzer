@@ -1,10 +1,25 @@
 # Ad Campaign Performance Analyzer
 
-A Streamlit dashboard for comparing campaign spend, clicks, estimated conversions and reported ROI across Facebook, Instagram, Pinterest and Twitter. It loads the supplied 60-campaign dataset immediately and accepts CSV or Excel uploads with the same schema.
+A dashboard for exploring how advertising campaigns perform across Facebook, Instagram, Pinterest and Twitter. Compare spending and results, look at trends, and find the campaigns that stand out.
 
-## Run on Windows
+The app opens with a 60-campaign sample dataset. You can also upload your own CSV or Excel file.
 
-Install Python 3.12, extract the ZIP, open the project folder in VS Code, and open a PowerShell terminal in that folder. Then run:
+![Dashboard overview](screenshots/01-overview.png)
+
+## What you can do
+
+- **Overview:** see the main metrics, spending trends and top campaigns.
+- **Platform Comparison:** compare channels by spend, clicks, conversions, costs and reported ROI.
+- **Campaign Details:** search individual campaigns, inspect their results and download the filtered table.
+- **Time Series:** explore daily, weekly or monthly trends and compare channels over time.
+
+Date, channel, audience, goal and customer segment filters apply across all four views. Use **Reset** to return to the full dataset.
+
+## Run locally
+
+Use Python 3.12. Clone this repository, open its folder, and run the commands for your system.
+
+**Windows (PowerShell)**
 
 ```powershell
 py -3.12 -m venv .venv
@@ -12,50 +27,21 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Open the local URL printed in the terminal, usually http://localhost:8501. Keep the terminal running. No API key, database or model training is required.
-
-## Run on macOS or Linux
+**macOS or Linux**
 
 ```bash
-python3 -m venv .venv
+python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m streamlit run app.py
 ```
 
-Python 3.12/Linux was independently verified for the selected Streamlit Cloud demo. The earlier Windows review used Python 3.13. Runtime dependencies are pinned in requirements.lock.txt, included by requirements.txt.
+Open the local address shown in the terminal and keep that terminal running while using the dashboard.
 
-## Dashboard views
+## Upload your data
 
-| View | Features |
-| --- | --- |
-| Overview | Spend, clicks, estimated conversions, CTR and mean reported ROI; weekly initial grouping with Daily/Weekly/Monthly options; slim spend bars and conversion line with separate axes; paired clicks/conversions and CTR/CVR charts; Top 5 campaigns by reported ROI; CPC, CPA and CVR |
-| Platform Comparison | Metric selector, channel comparison chart, aggregate metric table, CSV export |
-| Campaign Details | Literal, case-insensitive search, native column sorting, per-campaign metrics, CSV export, acquisition funnel |
-| Time Series | Daily, weekly (initial) and monthly groups; paired clicks/conversions and CTR/CVR charts with separate axes; metric selector; channel comparison; aggregate table; CSV export |
+Use the [sample CSV](data/social_media_advertising_sample.csv) as a template. Uploads can be UTF-8 CSV files or `.xlsx` workbooks, up to 10 MiB and 10,000 rows. For Excel, put the headers in the first row of the first worksheet.
 
-Global date, channel, target audience, campaign goal and customer segment filters apply to every view. Reset restores the full source range and all categories. Clearing a category produces an explicit empty state. Campaign search is local to Campaign Details and also filters its funnel and export.
-
-## Source data and definitions
-
-`data/social_media_advertising_sample.csv` was converted from the user's `Ad Campaign Performance Dataset.xlsx`. All 60 records and all 16 original columns were checked against the workbook. Dates remain January 5 through July 29, 2024. CSV files do not store Excel column widths; `########` in Excel is usually a display issue. If the characters are literally saved in the CSV instead of dates, the app rejects them.
-
-One row represents one complete campaign. The date groups whole campaign outcomes, not daily ad delivery. The app does not spread campaign totals over duration. Weekly groups start Monday. Dates without recorded campaigns are omitted. Missing channel periods remain gaps rather than fabricated zero outcomes.
-
-| Metric | Formula / unit |
-| --- | --- |
-| Spend | Sum of cleaned Acquisition_Cost, USD |
-| Estimated conversions | For each row, round(Clicks × Conversion_Rate), then sum; nearest integer, ties to even |
-| CTR | Sum(Clicks) ÷ Sum(Impressions), displayed as % |
-| CPC | Sum(Spend) ÷ Sum(Clicks), USD per click |
-| CPA | Sum(Spend) ÷ Sum(estimated conversions), USD per conversion |
-| CVR | Sum(estimated conversions) ÷ Sum(Clicks), displayed as % |
-| Average reported ROI | Arithmetic mean of the supplied ROI values, displayed as percentage points |
-
-The solution kit explicitly appends `%` to the ROI field, so a raw value of `3.2` displays as `3.20%`. The workbook does not independently document whether these values represent percentage points or a return multiple. This implementation follows the kit's percentage convention and identifies ROI as reported. It does not infer revenue, calculate portfolio ROI, or weight campaign ROI by spend. If the data owner confirms a multiplier convention, update labels and formatting before using the dashboard for financial decisions.
-
-N/A means a ratio has a zero denominator. Zero spend is valid; missing or invalid spend is rejected. All aggregate ratios use totals rather than means of per-campaign ratios.
-
-### Required upload schema
+These columns are required; their order can vary:
 
 ```text
 Campaign_ID, Target_Audience, Campaign_Goal, Duration, Channel_Used,
@@ -63,74 +49,30 @@ Conversion_Rate, Acquisition_Cost, ROI, Location, Language, Clicks,
 Impressions, Engagement_Score, Customer_Segment, Date, Company
 ```
 
-Upload a UTF-8 CSV or an `.xlsx` workbook with headers in the first row of its first worksheet. Column order can vary. Extra columns are ignored. Required columns cannot be missing; campaign IDs must be unique and category values cannot be blank.
+Campaign IDs must be unique. Use dates such as `2024-01-05`, costs such as `420.50` or `$1,420.50`, and conversion rates such as `0.12` or `12%`. The app explains validation errors when a file needs correcting. Loading a new file resets the filters to its data range.
 
-- Acquisition_Cost accepts `420`, `420.50`, or `$1,420.50`. Currency is USD.
-- Conversion_Rate accepts decimals such as `0.12`, or percentage text such as `12%`. Numeric `12` is rejected.
-- ROI accepts finite numeric values or percent text. Its raw value is treated as percentage points.
-- Date accepts `YYYY-MM-DD` or native Excel dates. Ambiguous dates such as `01/05/2024` are rejected.
-- Duration accepts a positive whole number or a label such as `15 Days`.
-- Clicks and impressions must be non-negative whole counts; clicks cannot exceed impressions.
+This is a public demo, so use sample or non-confidential data.
 
-Malformed uploads show the cause and stop rendering that source. Records are not silently dropped and invalid spend is not turned into zero. Changing a source resets the global filters to the new source bounds.
+## How the metrics work
 
-## Verified dataset totals
+| Metric | Calculation |
+| --- | --- |
+| Spend | Total acquisition cost, in USD |
+| Estimated conversions | Clicks × conversion rate, rounded for each campaign and then summed |
+| CTR | Total clicks ÷ total impressions |
+| CPC | Total spend ÷ total clicks |
+| CPA | Total spend ÷ total estimated conversions |
+| CVR | Total estimated conversions ÷ total clicks |
+| Average reported ROI | Mean of the campaign ROI values |
 
-| Metric | Expected result |
-| --- | ---: |
-| Campaigns | 60 |
-| Spend | $29,490.00 |
-| Clicks | 304,450 |
-| Impressions | 5,450,000 |
-| Estimated conversions | 61,361 |
-| CTR | 5.59% |
-| CPC | $0.10 |
-| CPA | $0.48 |
-| CVR | 20.15% |
-| Mean reported ROI | 3.86% |
+Rates use the filtered totals. ROI follows the supplied solution kit's percentage convention: `3.2` is displayed as `3.20%`. Conversions are estimates, and ROI is the reported campaign average. Ratios with a zero denominator display `N/A`.
 
-Ratios use full precision before display rounding. These are dataset outputs, not industry benchmarks.
+Each row represents a whole campaign. Time charts group campaign results by their recorded date; they do not represent daily ad delivery.
 
-## Tests
+## Tests and deployment
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-.\.venv\Scripts\python.exe -m pytest -q
-```
+Install `requirements-dev.txt` using the virtual-environment Python above, then run `-m pytest -q`. The test suite covers the analytics, uploads, filters and dashboard interactions. Results are recorded in [validation_report.md](validation_report.md).
 
-On macOS/Linux, replace the executable with `.venv/bin/python`. Tests cover independent dataset controls, currency cleaning, conversions, source validation, weighted rates, zero denominators, CSV/Excel parity, aggregation reconciliation, source preservation, and Streamlit interactions. See `validation_report.md` for the completed checks.
+For Streamlit Community Cloud, use branch `main`, entrypoint `app.py` and Python 3.12. No app secrets are required. See [DEPLOYMENT.md](DEPLOYMENT.md) for the setup and live checks. Deployment is pending.
 
-## Project structure
-
-- `app.py`: Streamlit UI, session-local loading, source state, shared filters and four views.
-- `utils/data_processing.py`: file loading, schema validation, transformations, filters and search.
-- `utils/metrics.py`: totals, derived ratios and platform/time aggregation.
-- `utils/charts.py`: Plotly chart generation and shared styling.
-- `data/social_media_advertising_sample.csv`: faithful CSV copy of the supplied workbook.
-- `tests/`: analytics tests and Streamlit AppTest interactions.
-- `development_log.md`: actual requests, implementation choices, issues and fixes.
-- `submission_checklist.md`: submission items and deployment steps.
-
-## Deploy
-
-The selected host is Streamlit Community Cloud for a public sample-data demo. Follow [DEPLOYMENT.md](DEPLOYMENT.md) to upload the extracted project contents to GitHub and deploy branch `main`, entrypoint `app.py`, with Python 3.12. requirements.txt includes the audited transitive lock. No secrets are needed. A public GitHub repository also makes the source and bundled dataset public. Source repository: [ghantaram4/ad-campaign-performance-analyzer](https://github.com/ghantaram4/ad-campaign-performance-analyzer). The live Cloud deployment is pending.
-
-## References
-
-Requirements and reference method: the user's `Oct Week 1_ Ad Campaign Performance Analyzer Solution Kit.pdf`, especially dataset transformations, four views, common defects and shared filter architecture. The application is independently implemented with separate analytics modules, strict input validation, additional audience filters, CSV/Excel uploads and exports.
-
-Streamlit API references checked during development:
-- https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest
-- https://docs.streamlit.io/develop/api-reference/data/st.column_config/st.column_config.numbercolumn
-
-## Visualization design
-
-Ink & Coral uses a dark ink sidebar, warm off-white canvas, white panels, coral and teal outcome series, and stable channel colours. Charts use straight thin lines, observed period markers, subtle count/spend fills, and slim bars. Paired plots label both axes; channel comparisons use solid lines for the left metric and dotted lines for the right. On narrow screens, chart panels stack. Rates continue to use grouped totals.
-
-## Pre-deployment security review
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the reviewed installation, upload limits, session isolation, export protection, audit evidence and hosting requirements. Uploads are limited to 10 MB and 10,000 rows; XLSX expansion is bounded and Excel formulas must be exported as values. CSV exports protect formula-like text, including dataframe toolbar downloads. The audited runtime resolution is pinned in requirements.lock.txt.
-
-## Independent Cloud-readiness review
-
-71 tests passed on Linux/Python 3.12, browser checks passed, and a fresh 41-package audit found no known vulnerabilities. Spaced CSV headers preserve numeric-looking campaign IDs, paired chart labels escape uploaded markup, and channel/date comparisons are bounded before expansion. The sample dataset and analytics are unchanged. See validation_report.md for the exact scope. This public demo accepts sample/non-confidential uploads; private business data needs restricted hosting access.
+The project uses Streamlit, pandas, Plotly and openpyxl. Its sample data and metric conventions come from the supplied Ad Campaign Performance Analyzer solution kit and dataset.
